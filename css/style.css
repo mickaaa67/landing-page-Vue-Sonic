@@ -391,85 +391,138 @@ footer {
     color: #e63946; 
 }
 
+/* ===============================
+   RESPONSIVE (MOBILE & TABLETTE)
+================================ */
 @media (max-width: 768px) {
-  /* HERO */
-  .hero-section {
-    min-height: 80vh; /* réduire la hauteur pour que le texte tienne */
-    padding-top: 60px;
-  }
+    
+    /* --- HEADER & NAVIGATION --- */
+    .main-header {
+        padding: 10px 5%;
+        width: 90%;
+        justify-content: space-between;
+    }
 
-  .hero-content {
-    padding: 20px;
-    max-width: 90%;
-    border-radius: 12px;
-  }
+    .logo-icon {
+        height: 60px; /* Réduction du logo pour gagner de la place */
+    }
 
-  .hero-content h1 {
-    font-size: 1.8rem; /* texte plus petit */
-    line-height: 1.2;
-  }
+    .logo span {
+        display: none; /* Cache le slogan texte pour éviter les chevauchements */
+    }
 
-  .slogan {
-    font-size: 1rem; /* slogan plus petit */
-  }
+    .header-cta {
+        display: none; /* Cache le bouton BILLETS du header pour épurer */
+    }
 
-  .hero-cta {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .hamburger {
+        display: flex;
+        z-index: 1001;
+    }
 
-  .hero-section::before {
-    /* si tu veux garder un overlay sombre sur l’image */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(5,5,30,0.7);
-    z-index: 0;
-  }
+    .nav-links {
+        display: none; /* Masqué par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* S'ouvre juste en dessous du header */
+        left: 0;
+        width: 100%;
+        background: #0b0b2b; /* Couleur var(--bg-dark) */
+        padding: 20px 0;
+        gap: 10px;
+        border-bottom: 3px solid var(--primary);
+        z-index: 1000;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
 
-  .hero-content {
-    position: relative;
-    z-index: 1;
-  }
+    .nav-links.active {
+        display: flex; /* S'affiche quand on clique sur le JS */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    /* Ajustement du dropdown en mobile */
+    .dropdown-menu {
+        position: static; 
+        display: block; /* On affiche les sous-menus directement pour l'accessibilité */
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero-section {
+        min-height: auto;
+        padding: 120px 20px 60px 20px; /* Espace pour le header fixe */
+    }
+
+    .hero-content {
+        padding: 25px 15px;
+        max-width: 100%;
+    }
+
+    .hero-logo {
+        width: 80%; /* Logo plus grand sur mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin: 15px 0;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-button, .secondary-cta {
+        width: 100%; /* Boutons pleine largeur pour faciliter le clic */
+        box-sizing: border-box;
+    }
+
+    /* --- SECTION IMAGE FESTIVAL (CORRECTION DES ESPACES) --- */
+    .festival-visual {
+        height: auto; /* Supprime les 900px qui créaient le vide */
+        padding: 20px 5%; /* Espace réduit et équilibré */
+    }
+
+    .festival-image {
+        height: auto;
+        max-height: 400px; /* Évite que l'image ne soit trop haute sur petit écran */
+        border-radius: 12px;
+    }
+
+    /* --- AUTRES SECTIONS --- */
+    section {
+        padding: 40px 5%;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .artist-card {
+        width: 140px; /* Cartes plus petites pour en mettre 2 par ligne */
+        font-size: 0.9rem;
+    }
+
+    .ticket-card {
+        width: 100%; /* Une carte de tarif par ligne */
+    }
 }
 
-@media (max-width: 768px) {
-  .main-header {
-    padding: 10px 5%;
-  }
-
-  .logo {
-    font-size: 1.5rem; /* réduire le logo */
-  }
-
-  .nav-links {
-    display: none; /* caché par défaut */
-    flex-direction: column;
-    gap: 10px;
-    background: rgba(10,10,35,0.95);
-    position: absolute;
-    top: 60px;
-    right: 5%;
-    padding: 15px;
-    border-radius: 8px;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .hero-section,
-.festival-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-}
