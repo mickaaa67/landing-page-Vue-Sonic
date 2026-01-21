@@ -1,0 +1,392 @@
+/* ===============================
+   VARIABLES COULEURS VUE SONIC
+================================ */
+
+:root {
+    --bg-dark: #0b0b2b;
+    --bg-dark-alt: #15153d;
+
+    --primary: #ff2d7a;        /* Rose Vue Sonic */
+    --primary-dark: #e02168;
+
+    --secondary: #7b5cff;      /* Violet */
+    --gradient-accent: linear-gradient(90deg, #7b5cff, #ff2d7a);
+
+    --text-main: #ffffff;
+    --text-muted: #d0d0e6;
+}
+
+/* ===============================
+   BASE
+================================ */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    background: radial-gradient(
+        circle at top,
+        #1a1a4f 0%,
+        var(--bg-dark) 60%
+    );
+
+    color: var(--text-main);
+    scroll-behavior: smooth;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+/* ===============================
+   NAVIGATION
+================================ */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav-links li a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--primary);
+}
+
+/* ===============================
+   DROPDOWN
+================================ */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: rgba(10, 10, 40, 0.95);
+    border-radius: 6px;
+    padding: 10px 0;
+    min-width: 150px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+    color: var(--text-main);
+}
+
+.dropdown-menu li a:hover {
+    color: var(--primary);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ===============================
+   HAMBURGER
+================================ */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(10, 10, 35, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 90%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-size: 2.5em;
+    color: var(--primary);
+}
+
+.logo-icon {
+    height: 100px;
+    margin-right: 8px;
+}
+
+/* ===============================
+   BOUTONS
+================================ */
+.cta-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--gradient-accent);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 45, 122, 0.4);
+}
+
+.secondary-cta {
+    padding: 12px 30px;
+    color: white;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.secondary-cta:hover {
+    background: var(--primary);
+    box-shadow: 0 0 20px rgba(255, 45, 122, 0.4);
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 👈 espace entre les boutons */
+    flex-wrap: wrap;
+}
+
+/* ===============================
+   HERO
+================================ */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        linear-gradient(rgba(5,5,30,0.7), rgba(5,5,30,0.9)),
+        url("../picture/hero.jpg") center / cover no-repeat;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 50px 40px;
+    background: rgba(20, 20, 60, 0.55);
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.slogan {
+    font-size: 1.7rem;
+    color: var(--text-muted);
+}
+
+/* ===============================
+   COUNTDOWN
+================================ */
+.countdown-container {
+    margin: 30px 0;
+    padding: 15px;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.countdown {
+    font-size: 2.5em;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--primary);
+    text-shadow: 0 0 15px rgba(255, 45, 122, 0.6);
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+
+/* ===============================
+   ARTISTES
+================================ */
+.artists-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.artist-card {
+    background: linear-gradient(180deg, var(--bg-dark-alt), var(--bg-dark));
+    padding: 20px;
+    border-radius: 6px;
+    width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 45, 122, 0.3);
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(123, 92, 255, 0.35);
+}
+
+/* ===============================
+   BILLETTERIE
+================================ */
+.ticket-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.ticket-card {
+    background: linear-gradient(180deg, var(--bg-dark-alt), var(--bg-dark));
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 300px;
+    border: 1px solid rgba(255, 45, 122, 0.3);
+}
+
+.ticket-card.best-value {
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 25px rgba(255, 45, 122, 0.6);
+}
+
+.ticket-card h3 {
+    color: var(--secondary);
+}
+
+.hero-logo {
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65) contrast(1.1);
+}
+
+.mirage-logo {
+    width: 40%;
+    height: 60%;
+    object-fit: cover;
+}
+
+/* ===============================
+   SECTION IMAGE FESTIVAL
+================================ */
+
+.festival-visual {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 900px;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+    position: relative;
+}
+
+.festival-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+     background-color: #0a0a28;
+     color: #ffffff; 
+     padding: 40px 5%; 
+     text-align: center; 
+     font-size: 0.9em;
+} 
+    
+.footer-top { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+    margin-bottom: 20px; 
+} 
+
+.footer-logo { 
+    height: 50px; 
+    width: auto; 
+} 
+
+.footer-links { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+} 
+
+.footer-links a { 
+    color: #ffffff; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+} 
+
+.footer-links a:hover { 
+    color: #e63946; 
+}
