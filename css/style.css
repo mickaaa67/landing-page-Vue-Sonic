@@ -391,96 +391,85 @@ footer {
     color: #e63946; 
 }
 
-/* ===============================
-   RESPONSIVE MOBILE
-================================ */
 @media (max-width: 768px) {
-  /* NAVIGATION */
-  .main-nav {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .hamburger {
-    display: flex; /* afficher le menu burger */
-  }
-
-  .main-nav .nav-links {
-    display: none; /* cacher les liens par défaut sur mobile */
-    flex-direction: column;
-    background: rgba(10, 10, 35, 0.95);
-    position: absolute;
-    top: 70px;
-    right: 5%;
-    padding: 20px;
-    border-radius: 8px;
-    z-index: 999;
-  }
-
-  .main-nav .nav-links.active {
-    display: flex;
-  }
-
   /* HERO */
+  .hero-section {
+    min-height: 80vh; /* réduire la hauteur pour que le texte tienne */
+    padding-top: 60px;
+  }
+
   .hero-content {
-    padding: 30px 20px;
+    padding: 20px;
+    max-width: 90%;
+    border-radius: 12px;
   }
 
   .hero-content h1 {
-    font-size: 2rem; /* réduire la taille sur mobile */
+    font-size: 1.8rem; /* texte plus petit */
+    line-height: 1.2;
   }
 
   .slogan {
-    font-size: 1.2rem;
+    font-size: 1rem; /* slogan plus petit */
   }
 
   .hero-cta {
     flex-direction: column;
-    gap: 15px;
-  }
-
-  /* ARTISTES */
-  .artists-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .artist-card {
-    width: 90%;
-  }
-
-  /* BILLETTERIE */
-  .ticket-options {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ticket-card {
-    width: 90%;
-    padding: 30px 15px;
-  }
-
-  /* SECTION FESTIVAL */
-  .festival-visual {
-    height: 500px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* FOOTER */
-  .footer-top {
-    flex-direction: column;
     gap: 10px;
   }
 
-  .footer-links {
-    flex-direction: column;
-    gap: 10px;
+  .hero-section::before {
+    /* si tu veux garder un overlay sombre sur l’image */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5,5,30,0.7);
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
   }
 }
 
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 5%;
+  }
+
+  .logo {
+    font-size: 1.5rem; /* réduire le logo */
+  }
+
+  .nav-links {
+    display: none; /* caché par défaut */
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(10,10,35,0.95);
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-section,
+.festival-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+}
